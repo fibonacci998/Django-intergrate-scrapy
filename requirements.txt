@@ -31,18 +31,18 @@ jsonpointer==1.10
 jsonschema==2.6.0
 keyring==10.6.0
 keyrings.alt==3.0
-language-selector==0.1
-lxml==4.4.2
-MarkupSafe==1.1.1
-netifaces==0.10.4
-oauthlib==2.0.6
-PAM==0.4.2
-parsel==1.5.2
-Protego==0.1.16
-pyasn1==0.4.8
-pyasn1-modules==0.2.7
-pycparser==2.19
-pycrypto==2.6.1
+# language-selector==0.1
+# lxml==4.4.2
+# MarkupSafe==1.1.1
+# netifaces==0.10.4
+# oauthlib==2.0.6
+# PAM==0.4.2
+# parsel==1.5.2
+# Protego==0.1.16
+# pyasn1==0.4.8
+# pyasn1-modules==0.2.7
+# pycparser==2.19
+# pycrypto==2.6.1
 PyDispatcher==2.0.5
 pygobject==3.26.1
 PyHamcrest==1.9.0
