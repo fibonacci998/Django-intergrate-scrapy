@@ -44,9 +44,9 @@ keyrings.alt==3.0
 # pycparser==2.19
 # pycrypto==2.6.1
 PyDispatcher==2.0.5
-pygobject==3.26.1
-PyHamcrest==1.9.0
-PyJWT==1.5.3
+# pygobject==3.26.1
+# PyHamcrest==1.9.0
+# PyJWT==1.5.3
 pyOpenSSL==19.1.0
 pyserial==3.4
 python-apt==1.6.4
