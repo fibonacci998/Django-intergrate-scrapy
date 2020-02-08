@@ -67,16 +67,16 @@ service-identity==18.1.0
 shub==2.10.0
 six==1.13.0
 sqlparse==0.2.4
-ssh-import-id==5.7
-systemd-python==234
-toml==0.10.0
-tqdm==4.41.0
-Twisted==19.10.0
-ufw==0.36
-unattended-upgrades==0.1
+# ssh-import-id==5.7
+# systemd-python==234
+# toml==0.10.0
+# tqdm==4.41.0
+# Twisted==19.10.0
+# ufw==0.36
+# unattended-upgrades==0.1
 urllib3==1.25.7
-virtualenv==16.7.9
-w3lib==1.21.0
-websocket-client==0.57.0
-Werkzeug==0.16.0
-zope.interface==4.7.1
+# virtualenv==16.7.9
+# w3lib==1.21.0
+# websocket-client==0.57.0
+# Werkzeug==0.16.0
+# zope.interface==4.7.1
