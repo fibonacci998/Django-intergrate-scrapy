@@ -6,6 +6,17 @@ class Quote(models.Model):
     unique_id = models.CharField(max_length=100, null=True)
     text = models.TextField()
     author = models.CharField(max_length=512)
+    @property
+    def to_dict(self):
+        data={
+            'text': json.loads(self.text),
+            'author': json.loads(self.author),
+            'unique_id': json.loads(self.unique_id)
+        }
+        return data
+    
+    def __str__(self):
+        return self.unique_id
 
 class ScrapyItem(models.Model):
     unique_id = models.CharField(max_length=100, null=True)

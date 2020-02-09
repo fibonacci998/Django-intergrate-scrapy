@@ -11,9 +11,10 @@ from scrapyd_api import ScrapydAPI
 # from .utils import URLUtil
 from .models import ScrapyItem,Quote
 from rest_framework.views import APIView
-
+import os
 # Create your views here.
-scrapyd = ScrapydAPI('http://localhost:6800')
+# scrapyd = ScrapydAPI('http://localhost:6800')
+scrapyd = ScrapydAPI('http://0.0.0.0:'+str(os.environ.get("PORT", 6800)))
 
 def is_valid_url(url):
     validate = URLValidator()
@@ -30,7 +31,7 @@ def is_valid_url(url):
 def crawl(request):
     # Post requests are for new crawling tasks
     if request.method == 'POST':
-
+        print("Go post")
         url = request.data.get('url', None) # take url comes from client. (From an input may be?)
 
         if not url:
@@ -49,7 +50,7 @@ def crawl(request):
             'unique_id': unique_id, # unique ID for each record for DB
             'USER_AGENT': 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
         }
-
+        print("creating crawler")
         # Here we schedule a new crawling task from scrapyd. 
         # Notice that settings is a special argument name. 
         # But we can pass other arguments, though.
@@ -57,7 +58,7 @@ def crawl(request):
         # We are goint to use that to check task's status.
         task = scrapyd.schedule('default', 'toscrape-css', 
             settings=settings, url=url, domain=domain)
-
+        print("Created crawler")
         return JsonResponse({'task_id': task, 'unique_id': unique_id, 'status': 'started' })
 
     # Get requests are for getting result of a specific crawling task
@@ -81,8 +82,9 @@ def crawl(request):
         if status == 'finished':
             try:
                 # this is the unique_id that we created even before crawling started.
-                item = Quote.objects.get(unique_id=unique_id) 
-                return JsonResponse({'data': item.to_dict['data']})
+                item = list(Quote.objects.filter(unique_id=unique_id).values())
+                
+                return JsonResponse({'data': item}, safe=False)
             except Exception as e:
                 return JsonResponse({'error': str(e)})
         else:
