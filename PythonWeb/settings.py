@@ -26,7 +26,7 @@ SECRET_KEY = '7cc!q98a2yyko%x6yxomo&8!7mafjkk3zpdtz$x)6om9eh%vbf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-intergrate-scrapy.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
