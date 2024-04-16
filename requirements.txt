@@ -15,7 +15,7 @@
 # cssselect==1.1.0
 # distro-info===0.18ubuntu0.18.04.1
 # dj-database-url==0.5.0
-Django==2.2.24
+Django==3.2.25
 django-heroku==0.3.1
 djangorestframework==3.11.0
 # docker-py==1.10.6
